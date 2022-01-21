@@ -1,0 +1,93 @@
+" ------------------------------------------------------------------------------
+" PLUGINS
+" ------------------------------------------------------------------------------
+
+set nocompatible
+
+call plug#begin()
+
+" Let vim-plug handle itself
+Plug 'junegunn/vim-plug'
+
+" Colorschemes
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
+
+" Polyglot (Language Server Support)
+Plug 'sheerun/vim-polyglot'
+
+" ALE (Linting)
+Plug 'dense-analysis/ale'
+
+" Autopairs
+Plug 'jiangmiao/auto-pairs'
+
+" NERDTree
+Plug 'preservim/nerdtree'
+
+" DevIcons
+Plug 'ryanoasis/vim-devicons'
+
+" Lightline
+Plug 'itchyny/lightline.vim'
+
+" Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },
+      \ 'for': ['markdown', 'vim-plug']}
+
+" LaTeX Live Preview
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
+call plug#end()
+
+
+" ------------------------------------------------------------------------------
+" VIM CONFIG
+" ------------------------------------------------------------------------------
+
+syntax on             " Enable syntax highlighting
+set number            " Show line numbers
+set relativenumber    " Show relative line numbers
+set tabstop=2		      " A tab is equivalent to 2 spaces
+set shiftwidth=2	    " An indent is worth 2 spaces
+set expandtab		      " Use spaces instead of a \t
+set mouse=a		        " Enable mouse support
+set incsearch         " Search incrementally
+set ignorecase        " Search is always case-insensitive
+set hlsearch          " Highlight search results
+set colorcolumn=81    " Show a line at 80 columns
+set termguicolors     " Enable True Color Support
+set encoding=UTF-8    " Set UTF-8 Encoding
+set splitbelow        " Always split below
+set splitright        " Always split right
+set termwinsize=12x0  " Size of the terminal window
+set laststatus=2      " Required by lightline
+set background=dark   " Dark version of colorscheme
+colorscheme gruvbox   " Gruvbox colorscheme
+
+
+" ------------------------------------------------------------------------------
+" ALE SETTINGS
+" ------------------------------------------------------------------------------
+
+let g:ale_sign_error=''
+let g:ale_sign_warning=''
+
+
+" ------------------------------------------------------------------------------
+" LIGHTLINE SETTINGS
+" ------------------------------------------------------------------------------
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
+
+
+" ------------------------------------------------------------------------------
+" KEYBINDINGS
+" ------------------------------------------------------------------------------
+
+" NERDTree
+nnoremap <F2> : NERDTreeToggle<CR>
+
+" AutoPairs
+let g:AutoPairsShortcutToggle = '<C-P>'
