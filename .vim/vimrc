@@ -48,10 +48,9 @@ call plug#end()
 syntax on             " Enable syntax highlighting
 set number            " Show line numbers
 set relativenumber    " Show relative line numbers
-set tabstop=2		      " A tab is equivalent to 2 spaces
-set shiftwidth=2	    " An indent is worth 2 spaces
-set expandtab		      " Use spaces instead of a \t
-set mouse=a		        " Enable mouse support
+set tabstop=4		  " A tab is equivalent to 2 spaces
+set shiftwidth=4	  " An indent is worth 2 spaces
+set mouse=a		      " Enable mouse support
 set incsearch         " Search incrementally
 set ignorecase        " Search is always case-insensitive
 set hlsearch          " Highlight search results
